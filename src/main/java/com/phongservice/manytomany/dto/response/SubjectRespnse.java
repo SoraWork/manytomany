@@ -1,0 +1,4 @@
+package com.phongservice.manytomany.dto.response;
+
+public class SubjectRespnse {
+}
