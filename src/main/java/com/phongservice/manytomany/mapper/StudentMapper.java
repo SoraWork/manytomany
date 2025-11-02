@@ -1,4 +1,4 @@
-package com.phongservice.manytomany.dto.mapper;
+package com.phongservice.manytomany.mapper;
 
 
 
@@ -8,16 +8,17 @@ import com.phongservice.manytomany.entity.Student;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {StudentSubjectMapper.class})
 public interface StudentMapper {
 
+    @Mapping(source = "studendtId", target = "id")
     @Mapping(source = "name", target = "name")
     @Mapping(source = "subjectRequests",target = "studentSubjects")
     Student toEntity(StudentRequest request);
 
     @Mapping(source = "id", target = "studentId")
     @Mapping(source = "name", target = "name")
-    @Mapping(source = "studentSubjects", target = "subjectRespnse")
+    @Mapping(source = "studentSubjects", target = "subjects")
     StudentResponse toResponse(Student entity);
 
 }
