@@ -26,6 +26,7 @@ public class StudentController {
     public ResponseEntity<StudentResponse> getStudentById(@PathVariable String id) {
         StudentResponse response = studentService.getById(id);
         System.out.println("smt change");
+        System.out.println("thay đổi thêm");
         return ResponseEntity.ok(response);
     }
 
