@@ -25,6 +25,7 @@ public class StudentController {
     @GetMapping("/{id}")
     public ResponseEntity<StudentResponse> getStudentById(@PathVariable String id) {
         StudentResponse response = studentService.getById(id);
+        System.out.println("smt change");
         return ResponseEntity.ok(response);
     }
 
